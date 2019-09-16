@@ -1,0 +1,37 @@
+<form (ngSubmit)="onSubmit(t)" #t="ngForm" class="form-row">
+
+  <div class="form-group mb-3 col-7">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Write you task here"
+      name="task"
+      ngModel
+      required
+      >
+  </div>
+
+  <div class="form-group mx-sm-3  col-3">
+    <select
+      class="form-control"
+      name="category"
+      id="category"
+      ngModel
+      required
+    >
+      <option value="date">Date</option>
+      <option value="priority">Priority</option>
+    </select>
+  </div>
+
+  <div class="form-group mb-3">
+    <div class="input-group-append">
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!t.valid"
+      >Add task</button>
+    </div>
+  </div>
+
+</form>
