@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { InputComponent } from './input/input.component';
+import { ContorllerComponent } from './contorller/contorller.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
-    InputComponent
+    InputComponent,
+    ContorllerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Output, ViewChild } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,10 @@ import { FormGroup, NgForm } from '@angular/forms';
 })
 export class InputComponent {
   @ViewChild('t', {static: true}) taskForm: NgForm;
-
+  newTask = {
+    task: '',
+    category: ''
+  };
   constructor() { }
 
   // onSubmit(taskInput: NgForm) {
@@ -16,6 +19,10 @@ export class InputComponent {
   // }
   onSubmit() {
     console.log(this.taskForm);
+    this.newTask.task = this.taskForm.value.task;
+    this.newTask.category = this.taskForm.value.category;
+
+    console.log(this.newTask);
   }
 
 }
