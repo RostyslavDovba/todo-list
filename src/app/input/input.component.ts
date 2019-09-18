@@ -15,9 +15,6 @@ export class InputComponent {
   // };
   constructor() { }
 
-  // onSubmit(taskInput: NgForm) {
-  //   console.log(taskInput.value);
-  // }
   onSubmit(data) {
     console.log(data);
     this.taskCreated.emit({
@@ -25,10 +22,13 @@ export class InputComponent {
       taskCategory: data.value.category
     });
 
-    // this.newTask.task = this.taskForm.value.task;
-    // this.newTask.category = this.taskForm.value.category;
+
+    // this.newTask = {
+    //   task: this.taskForm.value.task,
+    //   category: this.taskForm.value.category
+    // };
     //
-    // console.log(this.newTask);
+    // console.log(this.newTask, 'aaaaaaaaaaaaaaaaa');
   }
 
 }
