@@ -6,8 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  @Input() task: object;
-
+  @Input() task: {taskName: string, taskCategory: string};
   constructor() { }
 
   ngOnInit() {

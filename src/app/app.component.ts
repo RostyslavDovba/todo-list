@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-list';
+  taskList = [{taskName: 'Test', taskCategory: 'date'}];
+
+  onAddTask(taskData: {taskContent: string, taskCategory: string}) {
+    this.taskList.push({
+      taskName: taskData.taskContent,
+      taskCategory: taskData.taskCategory
+    });
+  }
 }
