@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from './interfaces/Task';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'todo-list';
-  taskList = [{taskName: 'Test', taskCategory: 'date'}];
+  taskId = 0;
+  taskList: Task[] = [];
 
-  onAddTask(taskData: {taskContent: string, taskCategory: string}) {
+  onAddTask(taskData: Task): void {
     this.taskList.push({
-      taskName: taskData.taskContent,
-      taskCategory: taskData.taskCategory
+      taskContent: taskData.taskContent,
+      taskCategory: taskData.taskCategory,
+      taskId: this.taskId
     });
+    this.taskId++;
+    console.log(this.taskList, '111111111111111');
   }
 }

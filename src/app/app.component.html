@@ -1,15 +1,17 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h1 style="text-align: center">Todo List</h1>
+            <h1>Todo List</h1>
             <div class="todo-wr">
                 <app-input
                   (taskCreated)="onAddTask($event)"
                 ></app-input>
+              <ul class="todo-wr__table list-group">
                 <app-table
-                  *ngFor="let taskListElement of taskList"
-                  [task]="taskListElement"
+                  *ngFor="let task of taskList"
+                  [task]="task"
                 ></app-table>
+              </ul>
             </div>
         </div>
     </div>

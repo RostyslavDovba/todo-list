@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { Task } from '../interfaces/Task';
 
 @Component({
   selector: 'app-input',
@@ -8,11 +9,8 @@ import { FormGroup, NgForm } from '@angular/forms';
 })
 export class InputComponent {
   @ViewChild('t', {static: true}) taskForm: NgForm;
-  @Output() taskCreated = new EventEmitter<{taskContent: string, taskCategory: string}>();
-  // newTask = {
-  //   task: '',
-  //   category: ''
-  // };
+  @Output() taskCreated = new EventEmitter<Task>();
+
   constructor() { }
 
   onSubmit(data) {
@@ -21,14 +19,6 @@ export class InputComponent {
       taskContent: data.value.task,
       taskCategory: data.value.category
     });
-
-
-    // this.newTask = {
-    //   task: this.taskForm.value.task,
-    //   category: this.taskForm.value.category
-    // };
-    //
-    // console.log(this.newTask, 'aaaaaaaaaaaaaaaaa');
+    this.taskForm.reset();
   }
-
 }

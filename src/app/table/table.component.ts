@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Task } from '../interfaces/Task';
 
 @Component({
   selector: 'app-table',
@@ -6,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  @Input() task: {taskName: string, taskCategory: string};
+  @Input() task: Task;
+
   constructor() { }
 
   ngOnInit() {
