@@ -1,4 +1,7 @@
 <li class="list-group-item">
   <p>{{ task.taskContent }}</p>
   <p>{{ task.taskCategory }}</p>
+  <button (click)="deleteTask()">
+    <i class="fa fa-trash-o"></i>
+  </button>
 </li>
