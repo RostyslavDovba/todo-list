@@ -8,7 +8,8 @@
                 ></app-input>
               <ul class="todo-wr__table list-group">
                 <app-table
-                  *ngFor="let task of taskList"
+                  (taskDeleted)="onDeleteTask($event)"
+                  *ngFor="let task of taskList; let i = index"
                   [task]="task"
                 ></app-table>
               </ul>

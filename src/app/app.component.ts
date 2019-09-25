@@ -17,6 +17,16 @@ export class AppComponent {
       taskId: this.taskId
     });
     this.taskId++;
-    console.log(this.taskList, '111111111111111');
+    // console.log(this.taskList, 'Task list 111111111111111');
+  }
+
+  onDeleteTask(taskIdIncome: number) {
+    for (let i = 0; i < this.taskList.length; i++) {
+      if (this.taskList[i].taskId === taskIdIncome) {
+        this.taskList.splice(i, 1);
+      }
+    }
+    console.log('income task id: ', taskIdIncome);
+    console.log('Task listL ', this.taskList);
   }
 }

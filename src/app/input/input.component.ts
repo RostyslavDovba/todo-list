@@ -13,11 +13,10 @@ export class InputComponent {
 
   constructor() { }
 
-  onSubmit(data) {
-    console.log(data);
+  onSubmit(formData) {
     this.taskCreated.emit({
-      taskContent: data.value.task,
-      taskCategory: data.value.category
+      taskContent: formData.value.task,
+      taskCategory: formData.value.category
     });
     this.taskForm.reset();
   }

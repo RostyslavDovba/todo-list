@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Task } from '../interfaces/Task';
 
 @Component({
@@ -8,6 +8,7 @@ import { Task } from '../interfaces/Task';
 })
 export class TableComponent implements OnInit {
   @Input() task: Task;
+  @Output() taskDeleted = new EventEmitter<number>();
 
   constructor() { }
 
@@ -15,7 +16,8 @@ export class TableComponent implements OnInit {
   }
 
   deleteTask() {
-    console.log(this);
+    this.taskDeleted.emit(this.task.taskId);
+    console.log('table id: ', this.task.taskId);
   }
 
 }
